@@ -20,7 +20,9 @@ namespace MauiGolf
 #endif
 
             builder.Services.AddTransient<MainPage>();
-            builder.Services.AddSingleton<Services.DBService>();
+            //Database
+            string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "mauigolf.db3");
+            builder.Services.AddSingleton<Data.Database>();
             return builder.Build();
         }
     }
