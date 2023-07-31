@@ -23,7 +23,42 @@
             <Label x:Name="lblHandicap" HorizontalOptions="Center" />
             <Label x:Name="lblHomeCourse" HorizontalOptions="Center" />
 
-            <ListView x:Name="lstScores" />
+            <ListView x:Name="lstScores" BackgroundColor="{DynamicResource Gray200}" />
+
+
+            <CollectionView x:Name="ScoresCV">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            Margin="2"
+                            Padding="10,5"
+                            BackgroundColor="{DynamicResource Gray200}"
+                            ColumnDefinitions="Auto"
+                            RowDefinitions="Auto,Auto">
+                            <Label
+                                Grid.Row="0"
+                                FontAttributes="Bold"
+                                FontSize="Large"
+                                HorizontalOptions="Center"
+                                Text="{Binding Value}"
+                                TextColor="{DynamicResource Primary}"
+                                VerticalOptions="Center" />
+                            <Label
+                                Grid.Row="1"
+                                FontSize="Small"
+                                HorizontalOptions="Center"
+                                Text="{Binding Date}"
+                                VerticalOptions="Center" />
+                        </Grid>
+
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
 
 
 

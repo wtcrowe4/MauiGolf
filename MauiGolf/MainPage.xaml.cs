@@ -27,6 +27,9 @@ namespace MauiGolf
             lstScores.ItemTemplate = new DataTemplate(typeof(TextCell));
             lstScores.ItemTemplate.SetBinding(TextCell.TextProperty, "Value");
             lstScores.ItemTemplate.SetBinding(TextCell.DetailProperty, "Date");
+
+            //Collection View
+            ScoresCV.ItemsSource = scores;
         }
 
 
