@@ -15,7 +15,6 @@ namespace MauiGolf.Models
         public float LowIndex { get; set; }
         public float HighIndex { get; set; }
         public int RoundsPlayed { get; set; }
-        public List<Score> Scores { get; set; }
         public int PlayerId { get; set; }
 
         //Add a method to calculate the handicap index

@@ -23,7 +23,9 @@
             <Label x:Name="lblHandicap" HorizontalOptions="Center" />
             <Label x:Name="lblHomeCourse" HorizontalOptions="Center" />
 
-            <ListView x:Name="lstScores" SelectionMode="None" />
+            <ListView x:Name="lstScores" />
+
+
 
 
         </VerticalStackLayout>
