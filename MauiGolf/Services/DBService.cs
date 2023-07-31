@@ -12,7 +12,17 @@ namespace MauiGolf.Services
 {
     public class DBService
     {
-        
+        //Login Functionality
+        public static bool Login(string email, string password)
+        {
+            var db = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "mauigolf.db3"));
+            var user = db.GetUser(email);
+            if(user != null && user.Password == password)
+            {
+                return true;
+            }
+            return false;
+        }
 
     
     }

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="MauiGolf.Pages.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:local="clr-namespace:MauiGolf.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label
+                Padding="0,50"
+                FontSize="Title"
+                HorizontalOptions="Center"
+                Text="Maui Golf"
+                VerticalOptions="Start" />
+            <Label
+                HorizontalOptions="Center"
+                Text="Please login to continue"
+                TextColor="{DynamicResource Gray500}" />
+            <Entry
+                x:Name="EmailEntry"
+                Margin="10,50"
+                Placeholder="Email"
+                WidthRequest="300" />
+            <Entry
+                x:Name="PasswordEntry"
+                Margin="10"
+                IsPassword="True"
+                Placeholder="Password"
+                WidthRequest="300" />
+            <Button
+                Margin="10,50"
+                Padding="20,5"
+                BackgroundColor="{DynamicResource Gray900}"
+                Clicked="LoginButton_Clicked"
+                HorizontalOptions="Center"
+                Text="Login"
+                TextColor="{DynamicResource White}" />
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

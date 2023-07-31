@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SQLite;
 using MauiGolf.Models;
 using System.Diagnostics;
+using static AndroidX.ConstraintLayout.Core.Motion.Utils.HyperSpline;
 
 namespace MauiGolf.Data
 {
@@ -184,6 +185,13 @@ namespace MauiGolf.Data
         public async Task<User> GetUser(int id)
         {
             User user = await db.Table<User>().Where(u => u.Id == id).FirstOrDefaultAsync();
+            Debug.WriteLine("GetUser: " + user.Name);
+            return user;
+        }
+        //Get User with Email
+        public User GetUser(string email)
+        {
+            User user = db.Table<User>().Where(u => u.Email == email).FirstOrDefaultAsync().Result;
             Debug.WriteLine("GetUser: " + user.Name);
             return user;
         }

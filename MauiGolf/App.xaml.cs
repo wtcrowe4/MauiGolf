@@ -1,4 +1,5 @@
 ﻿using MauiGolf.Data;
+using MauiGolf.Pages;
 using SQLite;
 
 namespace MauiGolf
@@ -20,7 +21,7 @@ namespace MauiGolf
         public App()
         {
             InitializeComponent();
-            MainPage = new AppShell();
+            MainPage = new LoginPage();
         }
     }
 }
