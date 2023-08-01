@@ -14,8 +14,8 @@
             <Image
                 HeightRequest="200"
                 HorizontalOptions="Center"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                Source="dotnet_bot.png" />
+                SemanticProperties.Description="Golf Ball on a Tee"
+                Source="golfballtee.png" />
 
             <Button Clicked="Btn_Clicked" Text="Get User" />
 

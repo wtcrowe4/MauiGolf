@@ -18,7 +18,7 @@
             <Label
                 HorizontalOptions="Center"
                 Text="Please login to continue"
-                TextColor="{DynamicResource Gray500}" />
+                TextColor="{DynamicResource PrimaryDark}" />
             <Entry
                 x:Name="EmailEntry"
                 Margin="10,50"
@@ -33,11 +33,11 @@
             <Button
                 Margin="10,50"
                 Padding="20,5"
-                BackgroundColor="{DynamicResource Gray900}"
+                BackgroundColor="{DynamicResource PrimaryDark}"
                 Clicked="LoginButton_Clicked"
                 HorizontalOptions="Center"
                 Text="Login"
-                TextColor="{DynamicResource White}" />
+                TextColor="{DynamicResource PrimaryLight}" />
         </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>
