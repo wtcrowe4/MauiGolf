@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<!--<resources>
     <color name="colorPrimary">#512BD4</color>
     <color name="colorPrimaryDark">#2B0B98</color>
     <color name="colorAccent">#2B0B98</color>
+</resources>-->
+
+<resources>
+  <color name="colorPrimary" hex="606c38" r="96" g="108" b="56" />
+  <color name="colorPrimaryDark" hex="283618" r="40" g="54" b="24" />
+  <color name="colorPrimaryLight" hex="fefae0" r="254" g="250" b="224" />
+  <color name="colorAccentLight" hex="dda15e" r="221" g="161" b="94" />
+  <color name="colorAccent" hex="bc6c25" r="188" g="108" b="37" />
 </resources>
