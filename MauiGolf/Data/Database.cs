@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SQLite;
 using MauiGolf.Models;
 using System.Diagnostics;
-using static AndroidX.ConstraintLayout.Core.Motion.Utils.HyperSpline;
+
 
 namespace MauiGolf.Data
 {
