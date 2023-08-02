@@ -23,6 +23,7 @@ namespace MauiGolf.Pages
             if (user != null)
             {
                 Debug.WriteLine("Login Successful");
+                //This will navigate to the authorized app shell ultimately mainpage
                 Application.Current.MainPage = new MainPage(user);
             }
         }

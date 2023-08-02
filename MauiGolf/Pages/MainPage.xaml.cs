@@ -5,7 +5,7 @@ using MauiGolf.Services;
 using SQLite;
 using MauiGolf.Pages;
 
-namespace MauiGolf
+namespace MauiGolf.Pages
 {
     public partial class MainPage : ContentPage
     {
@@ -52,7 +52,7 @@ namespace MauiGolf
         {
             
          
-            Application.Current.MainPage = new LoginPage();
+            Application.Current.MainPage = new AppShell();
             _currentUser = null;
 
         }

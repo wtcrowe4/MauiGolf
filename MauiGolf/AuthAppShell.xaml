@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-    x:Class="MauiGolf.Pages.HomePage"
+    x:Class="MauiGolf.Pages.AuthAppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:local="clr-namespace:MauiGolf"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:local="clr-namespace:MauiGolf.Pages"
+    xmlns:pages="clr-namespace:MauiGolf.Pages"
     mc:Ignorable="d">
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
         Ensure atleast a Flyout item or a TabBar is defined for Shell to work
     -->
     <Shell.Resources>
-    <!--
-        Define the resources to be used within this Shell visual hierarchy
-    -->
+        <!--
+            Define the resources to be used within this Shell visual hierarchy
+        -->
+
     </Shell.Resources>
     <!--
         When the Flyout is visible this defines the content to display in the flyout.
@@ -93,4 +95,9 @@
         </DataTemplate>
     </Shell.FlyoutFooterTemplate>
     -->
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate pages:MainPage}"
+        Route="MainPage" />
 </Shell>

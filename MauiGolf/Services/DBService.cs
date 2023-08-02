@@ -19,16 +19,23 @@ namespace MauiGolf.Services
             var db = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "mauigolf.db3"));
             var user = await db.GetUser(email);
 
-            if(user != null && user.Password == password) return user;
-            
-            else if(user == null)
+            if (user != null && user.Password == password)
+            {
+                return user;
+            }
+            else if (user == null)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Email doesn't match one in our database please register to continue.", "Ok");
                 return null;
-            } 
-            else if(user.Password != password)
+            }
+            else if (user.Password != password)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Password is incorrect please try again.", "Ok");
+                return null;
+            }
+            else
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Something went wrong please try again.", "Ok");
                 return null;
             }
             

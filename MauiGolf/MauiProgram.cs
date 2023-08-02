@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using MauiGolf.Pages;
 
 namespace MauiGolf
 {
