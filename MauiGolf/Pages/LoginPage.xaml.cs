@@ -19,11 +19,11 @@ namespace MauiGolf.Pages
             var email = EmailEntry.Text;
             var password = PasswordEntry.Text;
             
-            var success = DBService.Login(email, password);
-            if (success)
+            var user = DBService.Login(email, password);
+            if (user != null)
             {
                 Debug.WriteLine("Login Successful");
-                Application.Current.MainPage = new MainPage();
+                Application.Current.MainPage = new MainPage(user);
             }
             else
             {

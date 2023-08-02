@@ -1,9 +1,13 @@
-﻿namespace MauiGolf.Pages
+﻿using MauiGolf.Models;
+
+namespace MauiGolf.Pages
 {
     public partial class HomePage : Shell
     {
-        public HomePage()
+        private User _currentUser;
+        public HomePage(User user)
         {
+            _currentUser = user;
             InitializeComponent();
         }
 

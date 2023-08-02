@@ -5,9 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Clicked="Logout_Clicked" Text="Logout" />
-    </ContentPage.ToolbarItems>
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout" Command="Logout_Clicked" />
+    </ContentPage.ToolbarItems>-->
 
     <ScrollView>
         <VerticalStackLayout
@@ -72,7 +72,7 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-
+            <Button Clicked="Logout_Clicked" Text="Logout" />
 
 
 
