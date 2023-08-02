@@ -8,12 +8,52 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <Grid>
+        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label
+                Padding="0,30"
+                FontSize="Title"
+                HorizontalOptions="Center"
+                Text="Maui Golf"
+                VerticalOptions="Start" />
             <Label
                 HorizontalOptions="Center"
+                Text="Please register a new account"
+                TextColor="{DynamicResource PrimaryDark}" />
+            <Entry
+                x:Name="NameEntry"
+                Margin="10,50,10,10"
+                Placeholder="Name"
+                WidthRequest="300" />
+            <Entry
+                x:Name="EmailEntry"
+                Margin="10"
+                Placeholder="Email"
+                WidthRequest="300" />
+            <Entry
+                x:Name="PasswordEntry"
+                Margin="10"
+                IsPassword="True"
+                Placeholder="Password"
+                WidthRequest="300" />
+            <Entry
+                x:Name="ConfirmPasswordEntry"
+                Margin="10"
+                IsPassword="True"
+                Placeholder="Confirm Password"
+                WidthRequest="300" />
+            <Entry
+                x:Name="HomeCourseEntry"
+                Margin="10"
+                Placeholder="Home Course"
+                WidthRequest="300" />
+            <Button
+                Margin="10,50"
+                Padding="20,5"
+                BackgroundColor="{DynamicResource PrimaryDark}"
+                Clicked="RegisterButton_Clicked"
+                HorizontalOptions="Center"
                 Text="Register"
-                TextColor="{DynamicResource PrimaryDark}"
-                VerticalOptions="Start" />
-        </Grid>
+                TextColor="{DynamicResource PrimaryLight}" />
+        </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>

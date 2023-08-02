@@ -181,6 +181,14 @@ namespace MauiGolf.Data
           
         }
 
+        //Get All Users
+        public async Task<List<User>> GetUsers()
+        {
+            List<User> users = await db.Table<User>().ToListAsync();
+            Debug.WriteLine("GetUsers: " + users.Count);
+            return users;
+        }
+
         //Get User with Id
         public async Task<User> GetUser(int id)
         {
@@ -210,6 +218,18 @@ namespace MauiGolf.Data
             List<Score> scores = await db.Table<Score>().Where(s => s.PlayerId == playerId).ToListAsync();
             Debug.WriteLine("GetScores: " + scores.Count);
             return scores;
+        }
+    
+        //Create New User
+        public async Task<(int,int)> CreateUser(User user, Handicap handicap)
+        {
+            int playerId = await db.InsertAsync(user);
+            int handicapId = await db.InsertAsync(handicap);
+
+
+            Debug.WriteLine("CreatedUser: " + playerId);
+            Debug.WriteLine("CreatedHandicap: " + handicapId);
+            return (playerId, handicapId);
         }
     }
 }
