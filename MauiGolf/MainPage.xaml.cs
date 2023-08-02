@@ -3,7 +3,7 @@ using System.Diagnostics;
 using MauiGolf.Data;
 using MauiGolf.Services;
 using SQLite;
-
+using MauiGolf.Pages;
 
 namespace MauiGolf
 {
@@ -22,7 +22,7 @@ namespace MauiGolf
         {
             var db = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "mauigolf.db3"));
             var currentUser = await db.GetUser(1);
-            lblWelcome.Text = $"Hey {currentUser.Name.Split(" ", 0)}!";
+            lblWelcome.Text = $"Hey {currentUser.Name}!";
         }
 
         
@@ -45,6 +45,12 @@ namespace MauiGolf
             ScoresCV.ItemsSource = scores;
         }
 
+
+        private void Logout_Clicked(object sender, EventArgs e)
+        {
+            //current user = null
+            Application.Current.MainPage = new LoginPage();
+        }
 
         
         
