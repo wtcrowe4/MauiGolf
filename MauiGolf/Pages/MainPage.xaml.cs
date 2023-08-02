@@ -24,9 +24,6 @@ namespace MauiGolf.Pages
             lblWelcome.Text = $"Welcome {_currentUser.Name}!";
         }
 
-
-
-
         public async void Btn_Clicked(object sender, EventArgs e)
         {
             //var db = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "mauigolf.db3"));
@@ -50,11 +47,8 @@ namespace MauiGolf.Pages
 
         public void Logout_Clicked(object sender, EventArgs e)
         {
-            
-         
             Application.Current.MainPage = new AppShell();
             _currentUser = null;
-
         }
 
         

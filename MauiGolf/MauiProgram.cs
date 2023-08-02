@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using MauiGolf.Pages;
+using MauiGolf.Models;
 
 namespace MauiGolf
 {
@@ -21,9 +22,13 @@ namespace MauiGolf
 #endif
 
             builder.Services.AddTransient<MainPage>();
+            //builder.Services.AddTransient<AuthAppShell>();
+            builder.Services.AddTransient<User>();
+
             //Database
             string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "mauigolf.db3");
             builder.Services.AddSingleton<Data.Database>();
+            
             return builder.Build();
         }
     }

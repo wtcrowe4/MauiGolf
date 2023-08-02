@@ -1,22 +1,25 @@
 ﻿using MauiGolf.Models;
 using MauiGolf.Pages;
 
-namespace MauiGolf.Pages
+namespace MauiGolf
 {
     public partial class AuthAppShell : Shell
     {
         public AuthAppShell(User user)
         {
-            User _currentUser = user;
-            InitializeComponent();
-            //make main page the home page and pass it user
-            BindingContext = _currentUser;
-            Application.Current.MainPage = new MainPage(_currentUser); 
             
-            Routing.RegisterRoute("main", typeof(MainPage));
-            Routing.RegisterRoute("scores", typeof(ScoresPage));
+            InitializeComponent();
+            
 
-
+            //Navigate to MainPage by default passing it user object
+            //Ensure MainPage is defined in AppShell.xaml
+            
+            Application.Current.MainPage = new MainPage(user);               
+        
+            
+           
+           
+            
             
         }
 
