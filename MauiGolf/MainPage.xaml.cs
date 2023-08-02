@@ -4,15 +4,29 @@ using MauiGolf.Data;
 using MauiGolf.Services;
 using SQLite;
 
+
 namespace MauiGolf
 {
     public partial class MainPage : ContentPage
     {
+        
         public MainPage ()
         {
-            InitializeComponent ();
             
+            InitializeComponent();
+            OnAppearing();
+
         }
+
+        protected override async void OnAppearing()
+        {
+            var db = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "mauigolf.db3"));
+            var currentUser = await db.GetUser(1);
+            lblWelcome.Text = $"Hey {currentUser.Name.Split(" ", 0)}!";
+        }
+
+        
+
 
         public async void Btn_Clicked(object sender, EventArgs e)
         {
@@ -20,7 +34,6 @@ namespace MauiGolf
             var user = await db.GetUser(1);
             var handicap = await db.GetHandicap(1);
             var scores = await db.GetScores(1);
-            lblName.Text = user.Name;
             lblHomeCourse.Text = user.HomeCourse;
             lblHandicap.Text = handicap.CurrentIndex.ToString();
             lstScores.ItemsSource= scores;

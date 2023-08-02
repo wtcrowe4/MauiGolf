@@ -21,7 +21,7 @@ namespace MauiGolf
         public App()
         {
             InitializeComponent();
-            MainPage = new LoginPage();
+            MainPage = new AppShell();
         }
     }
 }
