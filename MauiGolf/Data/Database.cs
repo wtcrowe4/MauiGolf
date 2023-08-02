@@ -193,13 +193,23 @@ namespace MauiGolf.Data
         public async Task<User> GetUser(int id)
         {
             User user = await db.Table<User>().Where(u => u.Id == id).FirstOrDefaultAsync();
+            if(user == null)
+            {
+                Debug.WriteLine("GetUser: " + id + " not found");
+                return null;
+            }
             Debug.WriteLine("GetUser: " + user.Name + " User Id:" + user.Id);
             return user;
         }
         //Get User with Email
-        public User GetUser(string email)
+        public async Task<User> GetUser(string email)
         {
-            User user = db.Table<User>().Where(u => u.Email == email).FirstOrDefaultAsync().Result;
+            User user = await db.Table<User>().Where(u => u.Email == email).FirstOrDefaultAsync();
+            if(user == null)
+            {
+                Debug.WriteLine("GetUser: " + email + " not found");
+                return null;
+            }
             Debug.WriteLine("GetUser: " + user.Name);
             return user;
         }

@@ -48,10 +48,13 @@ namespace MauiGolf
         }
 
 
-        private async void Logout_Clicked(object sender, EventArgs e)
+        public void Logout_Clicked(object sender, EventArgs e)
         {
-            //current user = null
-            await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+            
+         
+            Application.Current.MainPage = new LoginPage();
+            _currentUser = null;
+
         }
 
         
