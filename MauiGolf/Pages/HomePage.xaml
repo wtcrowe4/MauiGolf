@@ -8,10 +8,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <Grid>
-            <Label HorizontalOptions="Center" Text="Home" />
+        <Grid RowDefinitions="Auto, Auto">
+            <Label
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                Text="Home" />
 
-            <Label x:Name="lblWelcome" HorizontalOptions="Center" />
+            <Label
+                x:Name="lblWelcome"
+                Grid.Row="2"
+                HorizontalOptions="Center" />
 
         </Grid>
     </ContentPage.Content>

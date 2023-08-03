@@ -14,7 +14,7 @@ namespace MauiGolf
             _currentUser = user;
             InitializeComponent();
             Debug.WriteLine("AuthAppShell: " + _currentUser.Name);
-            Application.Current.MainPage = new HomePage(_currentUser);
+            Application.Current.MainPage = new MainPage(_currentUser);
             
             
             //MainPage is rendering twice, first time with user, second time without user
