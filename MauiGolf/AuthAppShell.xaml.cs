@@ -1,26 +1,32 @@
 ﻿using MauiGolf.Models;
 using MauiGolf.Pages;
+using System.Diagnostics;
+
 
 namespace MauiGolf
 {
     public partial class AuthAppShell : Shell
     {
+        private readonly User _currentUser;
+
         public AuthAppShell(User user)
         {
-            
+            _currentUser = user;
             InitializeComponent();
+            Debug.WriteLine("AuthAppShell: " + _currentUser.Name);
+            Application.Current.MainPage = new HomePage(_currentUser);
             
-
+            
+            //MainPage is rendering twice, first time with user, second time without user
             //Navigate to MainPage by default passing it user object
-            //Ensure MainPage is defined in AppShell.xaml
             
-            Application.Current.MainPage = new MainPage(user);               
+            //MainPage mainPage = new MainPage(_currentUser); 
+            //Debug.WriteLine("AuthAppShell: " + _currentUser.Name);
+            ////Application.Current.MainPage = new MainPage(_currentUser);     
+            //Application.Current.MainPage = mainPage;
+            
+           
         
-            
-           
-           
-            
-            
         }
 
         // UnComment the below method to handle Shell Menu item click event

@@ -12,17 +12,23 @@ namespace MauiGolf.Pages
         private User _currentUser;   
         public MainPage (User user)
         {
-            _currentUser = user;
+
             InitializeComponent();
-            OnAppearing();
+            _currentUser = user;
+            Debug.WriteLine("MainPage User: " + _currentUser.Name);
+            lblWelcome.Text = $"Welcome {_currentUser.Name}!";
+           
+            //OnAppearing();
            
 
         }
 
-        protected override void OnAppearing()
-        {
-            lblWelcome.Text = $"Welcome {_currentUser.Name}!";
-        }
+        //protected override void OnAppearing()
+        //{
+           
+        //    Debug.WriteLine("onAppearing" + _currentUser.Name);
+        //    base.OnAppearing();
+        //}
 
         public async void Btn_Clicked(object sender, EventArgs e)
         {
@@ -45,11 +51,11 @@ namespace MauiGolf.Pages
         }
 
 
-        public void Logout_Clicked(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new AppShell();
-            _currentUser = null;
-        }
+        //public void Logout_Clicked(object sender, EventArgs e)
+        //{
+        //    Application.Current.MainPage = new AppShell();
+        //    _currentUser = null;
+        //}
 
         
         

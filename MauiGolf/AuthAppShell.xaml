@@ -17,7 +17,6 @@
         <!--
             Define the resources to be used within this Shell visual hierarchy
         -->
-
     </Shell.Resources>
     <!--
         When the Flyout is visible this defines the content to display in the flyout.
@@ -96,15 +95,19 @@
         </DataTemplate>
     </Shell.FlyoutFooterTemplate>
     -->
-
     <ShellContent
         Title="Home"
+        ContentTemplate="{DataTemplate pages:HomePage}"
+        Route="HomePage" />
+
+    <ShellContent
+        Title="Main"
         ContentTemplate="{DataTemplate pages:MainPage}"
-        
         Route="MainPage" />
     <ShellContent
         Title="Scores"
         ContentTemplate="{DataTemplate pages:ScoresPage}"
         Route="ScoresPage" />
+
 
 </Shell>

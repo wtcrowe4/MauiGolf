@@ -20,10 +20,10 @@ namespace MauiGolf
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-
-            builder.Services.AddTransient<MainPage>();
-            //builder.Services.AddTransient<AuthAppShell>();
-            builder.Services.AddTransient<User>();
+            builder.Services.AddSingleton<AuthAppShell>();
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<HomePage>();
+            builder.Services.AddSingleton<User>();
 
             //Database
             string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "mauigolf.db3");
