@@ -27,7 +27,7 @@ namespace MauiGolf.Pages
             (newUser, newHandicap) = await DBService.Register(name, email, password, homeCourse);
             
            
-            Application.Current.MainPage = new AuthAppShell(newUser);
+            Application.Current.MainPage = new AuthAppShell(new MainPage(newUser));
             
             
             

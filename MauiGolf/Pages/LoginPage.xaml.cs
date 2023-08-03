@@ -23,7 +23,14 @@ namespace MauiGolf.Pages
             if (user != null)
             {
                 Debug.WriteLine("Login Successful");
-                Application.Current.MainPage = new AuthAppShell(user);
+                
+                
+                //Needs to go to AuthAppShell
+                //Currently it is rendering twice and losing the User object
+
+                Application.Current.MainPage = new MainPage(user);
+                
+                //Application.Current.MainPage = new AuthAppShell(new MainPage(user));    
             }
         }
     }

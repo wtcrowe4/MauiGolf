@@ -10,13 +10,13 @@
     <ContentPage.Content>
         <Grid RowDefinitions="Auto, Auto">
             <Label
-                Grid.Row="1"
+                Grid.Row="0"
                 HorizontalOptions="Center"
                 Text="Home" />
 
             <Label
                 x:Name="lblWelcome"
-                Grid.Row="2"
+                Grid.Row="1"
                 HorizontalOptions="Center" />
 
         </Grid>

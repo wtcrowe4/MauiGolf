@@ -9,12 +9,12 @@ namespace MauiGolf
     {
         private readonly User _currentUser;
 
-        public AuthAppShell(User user)
+        public AuthAppShell(MainPage page)
         {
-            _currentUser = user;
+            //_currentUser = user;
             InitializeComponent();
-            Debug.WriteLine("AuthAppShell: " + _currentUser.Name);
-            Application.Current.MainPage = new MainPage(_currentUser);
+            //Debug.WriteLine("AuthAppShell: " + _currentUser.Name);
+            //Application.Current.MainPage = new MainPage(_currentUser);
             
             
             //MainPage is rendering twice, first time with user, second time without user
@@ -24,7 +24,7 @@ namespace MauiGolf
             //Debug.WriteLine("AuthAppShell: " + _currentUser.Name);
             ////Application.Current.MainPage = new MainPage(_currentUser);     
             //Application.Current.MainPage = mainPage;
-            
+            Application.Current.MainPage = page;
            
         
         }
