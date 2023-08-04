@@ -99,7 +99,7 @@
     <ShellContent
         Title="Main"
         ContentTemplate="{DataTemplate pages:MainPage}"
-        Route="/" />
+        Route="MainPage" />
 
     <ShellContent
         Title="Home"
