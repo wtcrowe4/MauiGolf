@@ -9,7 +9,9 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <Grid>
-            <Label Text="Scores" />
+            <Label x:Name="lblName" />
+            <ListView x:Name="lstScores" BackgroundColor="{DynamicResource Gray200}" />
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>

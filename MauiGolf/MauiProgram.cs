@@ -21,7 +21,7 @@ namespace MauiGolf
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-            //builder.Services.AddSingleton < AppShell() >;
+            
             builder.Services.AddSingleton<AuthAppShell>();
             builder.Services.AddSingleton<MainViewModel>();
             builder.Services.AddSingleton<MainPage>();

@@ -45,5 +45,6 @@ namespace MauiGolf.Pages
             _currentUser = null;
         }
 
+    
     }
 }
