@@ -8,20 +8,20 @@ namespace MauiGolf.Pages
 {
     public partial class HomePage : ContentPage
     {
-        private readonly User _currentUser;
-        public HomePage(MainViewModel viewModel, User user)
+        public HomePage(MainViewModel viewModel)
         {
-            _currentUser = user;
-            Debug.WriteLine("HomePage User: " + _currentUser.Name);
+            
             InitializeComponent();
 
             BindingContext = viewModel;
         }
 
-        protected override void OnAppearing()
+        protected override void OnNavigatedTo(NavigatedToEventArgs args)
         {
-            lblWelcome.Text = $"Welcome {_currentUser.Name}!";
-            base.OnAppearing();
+            base.OnNavigatedTo(args);
+            
         }
+        
+        
     }
 }

@@ -9,24 +9,22 @@ namespace MauiGolf
     {
         private readonly User _currentUser;
 
-        public AuthAppShell(MainPage page)
+        public AuthAppShell(User user)
         {
-            //_currentUser = user;
+            _currentUser = user;
             InitializeComponent();
-            //Debug.WriteLine("AuthAppShell: " + _currentUser.Name);
-            //Application.Current.MainPage = new MainPage(_currentUser);
             
+            Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
+            Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
+            Routing.RegisterRoute(nameof(ScoresPage), typeof(ScoresPage));
+
             
-            //MainPage is rendering twice, first time with user, second time without user
-            //Navigate to MainPage by default passing it user object
-            
-            //MainPage mainPage = new MainPage(_currentUser); 
-            //Debug.WriteLine("AuthAppShell: " + _currentUser.Name);
-            ////Application.Current.MainPage = new MainPage(_currentUser);     
-            //Application.Current.MainPage = mainPage;
-            Application.Current.MainPage = page;
-           
-        
+            //This line is causing navigation not to go from Homepage back to MainPage
+            Debug.WriteLine("AuthAppShell User: " + _currentUser.Name);
+            Current.GoToAsync($"{nameof(HomePage)}", new Dictionary<string, object> { ["CurrentUser"] = _currentUser });
+            Current.GoToAsync($"{nameof(MainPage)}", new Dictionary<string, object> { ["CurrentUser"] = _currentUser });
+            Current.GoToAsync($"{nameof(ScoresPage)}", new Dictionary<string, object> { ["CurrentUser"] = _currentUser });
+
         }
 
         // UnComment the below method to handle Shell Menu item click event

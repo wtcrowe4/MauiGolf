@@ -2,6 +2,7 @@
 using MauiGolf.Models;
 using MauiGolf.Data;
 using System.Diagnostics;
+using MauiGolf.ViewModels;
 
 namespace MauiGolf.Pages
 {
@@ -12,10 +13,8 @@ namespace MauiGolf.Pages
             InitializeComponent();
         }
 
-        //Login Functionality
         private async void LoginButton_Clicked(object sender, EventArgs e)
         {
-            //var db = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "mauigolf.db3"));
             var email = EmailEntry.Text;
             var password = PasswordEntry.Text;
             
@@ -23,14 +22,8 @@ namespace MauiGolf.Pages
             if (user != null)
             {
                 Debug.WriteLine("Login Successful");
-                
-                
-                //Needs to go to AuthAppShell
-                //Currently it is rendering twice and losing the User object
-
-                Application.Current.MainPage = new MainPage(user);
-                
-                //Application.Current.MainPage = new AuthAppShell(new MainPage(user));    
+                var mainViewModel = new MainViewModel(user);
+                Application.Current.MainPage = new AuthAppShell(user);
             }
         }
     }

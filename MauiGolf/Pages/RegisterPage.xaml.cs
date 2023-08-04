@@ -1,7 +1,7 @@
 ﻿using MauiGolf.Data;
 using MauiGolf.Models;
 using MauiGolf.Services;
-
+using MauiGolf.ViewModels;
 
 namespace MauiGolf.Pages
 {
@@ -25,34 +25,11 @@ namespace MauiGolf.Pages
             var newHandicap = new Handicap();
 
             (newUser, newHandicap) = await DBService.Register(name, email, password, homeCourse);
+
+            var mainViewModel = new MainViewModel(newUser);
+
+            Application.Current.MainPage = new AuthAppShell(newUser);
             
-           
-            Application.Current.MainPage = new AuthAppShell(new MainPage(newUser));
-            
-            
-            
-            
-            //var user = new User
-            //{
-            //    Name = name,
-            //    Email = email,
-            //    Password = password,
-            //    HomeCourse = homeCourse,
-            //};
-
-            //var handicap = new Handicap
-            //{
-            //    CurrentIndex = 0,
-            //    PlayerId = user.Id
-            //};
-
-            //user.HandicapId = handicap.Id;
-
-            //await db.CreateUser(user, handicap);
-
-            //Application.Current.MainPage = new LoginPage();
-
-
         }
     }
 }

@@ -1,19 +1,23 @@
 ﻿using MauiGolf.Models;
 using MauiGolf.Pages;
 using System.Diagnostics;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 
 namespace MauiGolf.ViewModels
 {
-    public partial class MainViewModel
+    [QueryProperty(nameof(CurrentUser), nameof(CurrentUser))]
+    public partial class MainViewModel : ObservableObject 
     {
-        public readonly User _currentUser;
+        [ObservableProperty]
+        User currentUser;
 
         public MainViewModel(User user)
         {
-            _currentUser = user;
-            Debug.WriteLine("MainViewModel User: " + _currentUser.Name);
+            currentUser = user;
+            Debug.WriteLine("MainViewModel User: " + currentUser.Name);
         }
+    
     }
 
  }
