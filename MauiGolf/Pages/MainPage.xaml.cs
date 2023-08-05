@@ -11,12 +11,12 @@ namespace MauiGolf.Pages
     public partial class MainPage : ContentPage
     {
         private User _currentUser;   
-        public MainPage (MainViewModel viewModel)
+        public MainPage (MainViewModel vm)
         {
 
             InitializeComponent();
-            BindingContext = viewModel;
-            _currentUser = viewModel.CurrentUser;
+            BindingContext = vm;
+            _currentUser = vm.CurrentUser;
             Debug.WriteLine("MainPage User: " + _currentUser.Name);
             lblWelcome.Text = $"Welcome {_currentUser.Name}!";
            
@@ -25,7 +25,7 @@ namespace MauiGolf.Pages
         
         public async void Btn_Clicked(object sender, EventArgs e)
         {
-            var handicap = await App.Database.GetHandicap(_currentUser.HandicapId);
+            var handicap = await App.Database.GetHandicap(_currentUser.Id);
             var scores = await App.Database.GetScores(_currentUser.Id);
             lblHomeCourse.Text = _currentUser.HomeCourse;
             lblHandicap.Text = handicap.CurrentIndex.ToString();

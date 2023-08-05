@@ -26,6 +26,7 @@ namespace MauiGolf
             builder.Services.AddSingleton<MainViewModel>();
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<HomePage>();
+            builder.Services.AddSingleton<ScoresPage>();
             builder.Services.AddSingleton<User>();
 
             //Database

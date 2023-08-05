@@ -8,12 +8,12 @@ namespace MauiGolf.Pages
 {
     public partial class HomePage : ContentPage
     {
-        public HomePage(MainViewModel viewModel)
+        public HomePage(MainViewModel vm)
         {
             
             InitializeComponent();
 
-            BindingContext = viewModel;
+            BindingContext = vm;
         }
 
         protected override void OnNavigatedTo(NavigatedToEventArgs args)

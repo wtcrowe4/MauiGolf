@@ -8,10 +8,22 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <Grid>
-            <Label x:Name="lblName" />
-            <ListView x:Name="lstScores" BackgroundColor="{DynamicResource Gray200}" />
+        <VerticalStackLayout>
+            <Label
+                x:Name="lblName"
+                FontSize="Title"
+                HorizontalOptions="Center"
+                TextColor="{DynamicResource PrimaryDark}" />
+            <Label
+                x:Name="lblHandicap"
+                FontSize="Title"
+                HorizontalOptions="Center"
+                TextColor="{DynamicResource Primary}" />
+            <ListView
+                x:Name="lstScores"
+                BackgroundColor="{DynamicResource PrimaryLight}"
+                HorizontalOptions="Center" />
 
-        </Grid>
+        </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>
