@@ -18,11 +18,6 @@ namespace MauiGolf.Pages
 
             _currentUser = vm.CurrentUser;
             InitializeComponent();
-            //BindingContext = viewModel;
-            //_currentUser = viewModel.CurrentUser;
-            //Debug.WriteLine("ScoresPage User: " + _currentUser.Name);
-            //lblName.Text = _currentUser.Name + "'s Scores";
-            //lstScores.ItemsSource = viewModel.Scores;
             BindingContext = vm;
         }
 

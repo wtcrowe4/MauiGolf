@@ -17,7 +17,7 @@ namespace MauiGolf.Data
         public Database(string dbPath)
         {
             db = new SQLiteAsyncConnection(dbPath);
-            
+
             //Seeding the database with some data
             if (db == null)
             {
@@ -44,15 +44,7 @@ namespace MauiGolf.Data
                     HandicapId = 1,
                     PlayerId = 1
                 });
-                db.InsertAsync(new Handicap
-                {
-                    Id = 11,
-                    CurrentIndex = 2.3f,
-                    LowIndex = 0.5f,
-                    HighIndex = 4.9f,
-                    RoundsPlayed = 10,
-                    PlayerId = 1
-                });
+                
                 db.InsertAsync(new Score
                 {
                     Id = 12,
@@ -190,7 +182,7 @@ namespace MauiGolf.Data
         }
 
         //Get User with Id
-        public async Task<User> GetUser(int id)
+        public async Task<User> GetUserById(int id)
         {
             User user = await db.Table<User>().Where(u => u.Id == id).FirstOrDefaultAsync();
             if(user == null)

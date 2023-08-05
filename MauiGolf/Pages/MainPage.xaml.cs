@@ -42,6 +42,11 @@ namespace MauiGolf.Pages
         public void Logout_Clicked(object sender, EventArgs e)
         {
             Application.Current.MainPage = new AppShell();
+            Preferences.Set("UserId", 0);
+            Preferences.Set("UserEmail", "");
+            Preferences.Set("UserPassword","");
+            Preferences.Clear();
+            BindingContext = null;
             _currentUser = null;
         }
 

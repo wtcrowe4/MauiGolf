@@ -1,6 +1,7 @@
 ﻿using MauiGolf.Data;
 using MauiGolf.Models;
 using MauiGolf.Pages;
+using MauiGolf.Services;
 using MauiGolf.ViewModels;
 using SQLite;
 using System.Diagnostics;
@@ -24,20 +25,9 @@ namespace MauiGolf
         public App()
         {
             InitializeComponent();
+            //Preferences.Clear();
             MainPage = new AppShell();
-            //Temp bypass login for debugging
-            //var user = BypassLogin().Result;
-            //var authAppShell = new AuthAppShell(user);
-            //var mainViewModel = new MainViewModel(user);
-            //MainPage = authAppShell;
-            
         }
 
-        private async Task<User> BypassLogin()
-        {
-            var user = await App.Database.GetUser(1);
-            Debug.WriteLine("BypassLogin User: " + user.Name);  
-            return user;
-        }
     }
 }
