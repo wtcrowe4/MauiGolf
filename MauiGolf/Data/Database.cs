@@ -233,5 +233,13 @@ namespace MauiGolf.Data
             Debug.WriteLine("CreatedHandicap: " + handicapId);
             return (playerId, handicapId);
         }
+
+        //Add Score
+        public async Task<int> AddScore(Score score)
+        {
+            int scoreId = await db.InsertAsync(score);
+            Debug.WriteLine("AddScore: " + scoreId);
+            return scoreId;
+        }
     }
 }

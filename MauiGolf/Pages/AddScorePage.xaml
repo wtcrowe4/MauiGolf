@@ -8,11 +8,34 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <Grid>
+        <StackLayout
+            Margin="20"
+            Spacing="20"
+            VerticalOptions="CenterAndExpand">
             <Label
+                FontSize="Title"
                 HorizontalOptions="Center"
                 Text="Add A Score"
-                VerticalOptions="Center" />
-        </Grid>
+                TextColor="{DynamicResource PrimaryDark}" />
+            <Entry
+                x:Name="ScoreEntry"
+                FontSize="16"
+                Placeholder="Score" />
+            <Entry
+                x:Name="DateEntry"
+                FontSize="16"
+                Placeholder="Date" />
+            <Entry
+                x:Name="CourseEntry"
+                FontSize="16"
+                Placeholder="Course" />
+
+            <Button
+                BackgroundColor="{DynamicResource Primary}"
+                Clicked="OnAddScore_Clicked"
+                FontSize="16"
+                Text="Add Score"
+                TextColor="White" />
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
