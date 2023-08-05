@@ -112,5 +112,10 @@
         ContentTemplate="{DataTemplate pages:ScoresPage}"
         Route="ScoresPage" />
 
+    <ShellContent
+        Title="Add Score"
+        ContentTemplate="{DataTemplate pages:AddScorePage}"
+        Route="AddScorePage" />
+
 
 </Shell>
