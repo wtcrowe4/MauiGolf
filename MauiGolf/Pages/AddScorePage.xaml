@@ -17,18 +17,27 @@
                 HorizontalOptions="Center"
                 Text="Add A Score"
                 TextColor="{DynamicResource PrimaryDark}" />
+
             <Entry
                 x:Name="ScoreEntry"
                 FontSize="16"
                 Placeholder="Score" />
-            <Entry
+            <DatePicker
                 x:Name="DateEntry"
                 FontSize="16"
-                Placeholder="Date" />
+                Format="MM/dd/yyyy" />
             <Entry
                 x:Name="CourseEntry"
                 FontSize="16"
                 Placeholder="Course" />
+            <Entry
+                x:Name="RatingEntry"
+                FontSize="16"
+                Placeholder="Rating" />
+            <Entry
+                x:Name="SlopeEntry"
+                FontSize="16"
+                Placeholder="Slope" />
 
             <Button
                 BackgroundColor="{DynamicResource Primary}"

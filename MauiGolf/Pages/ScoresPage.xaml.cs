@@ -28,6 +28,9 @@ namespace MauiGolf.Pages
             lblName.Text = _currentUser.Name + "'s Scores";
             lblHandicap.Text = "Current Index: " + handicap.CurrentIndex;
 
+            //order scores by date with most recent first
+            scores = scores.OrderByDescending(s => s.Date).ToList();
+
             lstScores.ItemsSource = scores;
             lstScores.ItemTemplate = new DataTemplate(typeof(TextCell));
             lstScores.ItemTemplate.SetBinding(TextCell.TextProperty, "Value");

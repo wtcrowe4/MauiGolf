@@ -22,12 +22,28 @@ namespace MauiGolf.Pages
         {
             var score = new Score();
             score.Value = Convert.ToInt32(ScoreEntry.Text);
-            //just using current date for now
-            score.Date = DateTime.Now;
+            //checking if the date is valid
+            DateTime selectedDate;
+            if (DateTime.TryParse(DateEntry.Date.ToString(), out selectedDate))
+            {
+                score.Date = selectedDate;
+            }
+            else
+            {
+                score.Date = DateTime.Now;
+            }
+
+
+            score.Course = CourseEntry.Text;
+            score.Rating = Convert.ToSingle(RatingEntry.Text);
+            score.Slope = Convert.ToInt32(SlopeEntry.Text);
+            score.HandicapId = _currentUser.HandicapId;
             score.PlayerId = _currentUser.Id;
             await App.Database.AddScore(score);
+            
             //navigate to scores page
-            await Shell.Current.GoToAsync("ScoresPage");
+            Application.Current.MainPage = new AuthAppShell(_currentUser);
+            
         }
     }
 }
