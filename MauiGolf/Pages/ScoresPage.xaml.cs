@@ -21,13 +21,7 @@ namespace MauiGolf.Pages
             BindingContext = vm;
         }
 
-        protected override void OnNavigatedTo(NavigatedToEventArgs args)
-        {
-            base.OnNavigatedTo(args);
-            
-        }
-
-        protected async override void OnAppearing()
+        protected async override void OnNavigatedTo(NavigatedToEventArgs args)
         {
             var handicap = await App.Database.GetHandicap(_currentUser.Id);
             var scores = await App.Database.GetScores(_currentUser.Id);
@@ -39,9 +33,29 @@ namespace MauiGolf.Pages
             lstScores.ItemTemplate.SetBinding(TextCell.TextProperty, "Value");
             lstScores.ItemTemplate.SetBinding(TextCell.DetailProperty, "Date");
 
-            base.OnAppearing();
+
+            base.OnNavigatedTo(args);
             
         }
+
+
+        //This function is being called on login, but I want it to only run on navigation to the scores page
+        //protected async override void OnAppearing()
+        //{
+            
+        //    var handicap = await App.Database.GetHandicap(_currentUser.Id);
+        //    var scores = await App.Database.GetScores(_currentUser.Id);
+        //    lblName.Text = _currentUser.Name + "'s Scores";
+        //    lblHandicap.Text = "Current Index: " + handicap.CurrentIndex;
+
+        //    lstScores.ItemsSource = scores;
+        //    lstScores.ItemTemplate = new DataTemplate(typeof(TextCell));
+        //    lstScores.ItemTemplate.SetBinding(TextCell.TextProperty, "Value");
+        //    lstScores.ItemTemplate.SetBinding(TextCell.DetailProperty, "Date");
+
+        //    base.OnAppearing();
+            
+        //}
 
     }
 }

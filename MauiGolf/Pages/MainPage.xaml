@@ -28,7 +28,7 @@
                 SemanticProperties.Description="Golf Ball on a Tee"
                 Source="golfballtee.png" />
 
-            <Button Clicked="Btn_Clicked" Text="Get My Stats" />
+            <Button Clicked="StatsBtn_Clicked" Text="Get My Stats" />
 
             <Label
                 x:Name="lblHandicap"
