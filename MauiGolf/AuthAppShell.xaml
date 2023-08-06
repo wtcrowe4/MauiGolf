@@ -106,6 +106,10 @@
         ContentTemplate="{DataTemplate pages:HomePage}"
         Route="HomePage" />
 
+    <ShellContent
+        Title="Handicap"
+        ContentTemplate="{DataTemplate pages:HandicapPage}"
+        Route="HandicapPage" />
 
     <ShellContent
         Title="Scores"

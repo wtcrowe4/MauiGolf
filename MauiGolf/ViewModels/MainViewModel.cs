@@ -2,6 +2,7 @@
 using MauiGolf.Pages;
 using System.Diagnostics;
 using CommunityToolkit.Mvvm.ComponentModel;
+using MauiGolf.Data;
 
 
 namespace MauiGolf.ViewModels
@@ -14,7 +15,7 @@ namespace MauiGolf.ViewModels
 
         [ObservableProperty]
         List<Score> scores;
-
+        
         [ObservableProperty]
         Handicap handicap;
 
@@ -22,6 +23,12 @@ namespace MauiGolf.ViewModels
         {
             currentUser = user;
             Debug.WriteLine("MainViewModel User: " + currentUser.Name);
+            //handicap = App.Database.GetHandicap(currentUser.Id).Result;
+            //scores = App.Database.GetScores(currentUser.Id).Result;
+
+            //currentUser.Handicap = handicap;
+            //currentUser.Scores = scores;
+
         }
 
     }

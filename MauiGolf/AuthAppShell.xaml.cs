@@ -18,6 +18,7 @@ namespace MauiGolf
             Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
             Routing.RegisterRoute(nameof(ScoresPage), typeof(ScoresPage));
             Routing.RegisterRoute(nameof(AddScorePage), typeof(AddScorePage));
+            Routing.RegisterRoute(nameof(HandicapPage), typeof(HandicapPage));
 
             
             //This line is causing navigation not to go from Homepage back to MainPage
@@ -26,6 +27,7 @@ namespace MauiGolf
             Current.GoToAsync($"{nameof(MainPage)}", new Dictionary<string, object> { ["CurrentUser"] = _currentUser });
             Current.GoToAsync($"{nameof(ScoresPage)}", new Dictionary<string, object> { ["CurrentUser"] = _currentUser });
             Current.GoToAsync($"{nameof(AddScorePage)}", new Dictionary<string, object> { ["CurrentUser"] = _currentUser });
+            Current.GoToAsync($"{nameof(HandicapPage)}", new Dictionary<string, object> { ["CurrentUser"] = _currentUser });
 
         }
 

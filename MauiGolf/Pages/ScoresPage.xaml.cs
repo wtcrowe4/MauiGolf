@@ -41,24 +41,6 @@ namespace MauiGolf.Pages
             
         }
 
-
-        //This function is being called on login, but I want it to only run on navigation to the scores page
-        //protected async override void OnAppearing()
-        //{
-            
-        //    var handicap = await App.Database.GetHandicap(_currentUser.Id);
-        //    var scores = await App.Database.GetScores(_currentUser.Id);
-        //    lblName.Text = _currentUser.Name + "'s Scores";
-        //    lblHandicap.Text = "Current Index: " + handicap.CurrentIndex;
-
-        //    lstScores.ItemsSource = scores;
-        //    lstScores.ItemTemplate = new DataTemplate(typeof(TextCell));
-        //    lstScores.ItemTemplate.SetBinding(TextCell.TextProperty, "Value");
-        //    lstScores.ItemTemplate.SetBinding(TextCell.DetailProperty, "Date");
-
-        //    base.OnAppearing();
-            
-        //}
-
+    
     }
 }
