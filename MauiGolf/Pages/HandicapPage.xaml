@@ -8,50 +8,62 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <VerticalStackLayout HorizontalOptions="Center">
+        <VerticalStackLayout
+            BackgroundColor="{DynamicResource PrimaryLight}"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
             <Label
                 Padding="20"
                 FontSize="50"
-                Text="Handicap" />
+                Text="Handicap"
+                TextColor="{DynamicResource PrimaryDark}" />
             <HorizontalStackLayout>
                 <Label
                     Padding="0,10"
                     FontSize="30"
-                    Text="Current Index: " />
+                    Text="Current Index: "
+                    TextColor="{DynamicResource Primary}" />
                 <Label
                     x:Name="CurIndexVal"
                     Padding="0,10"
-                    FontSize="30" />
+                    FontSize="30"
+                    TextColor="{DynamicResource Primary}" />
             </HorizontalStackLayout>
             <HorizontalStackLayout>
                 <Label
                     Padding="0,10"
                     FontSize="20"
-                    Text="Low Index: " />
+                    Text="Low Index: "
+                    TextColor="{DynamicResource Primary}" />
                 <Label
                     x:Name="LowIndexVal"
                     Padding="0,10"
-                    FontSize="20" />
+                    FontSize="20"
+                    TextColor="{DynamicResource Primary}" />
             </HorizontalStackLayout>
             <HorizontalStackLayout>
                 <Label
                     Padding="0,10"
                     FontSize="20"
-                    Text="High Index: " />
+                    Text="High Index: "
+                    TextColor="{DynamicResource Primary}" />
                 <Label
                     x:Name="HighIndexVal"
                     Padding="0,10"
-                    FontSize="20" />
+                    FontSize="20"
+                    TextColor="{DynamicResource Primary}" />
             </HorizontalStackLayout>
             <HorizontalStackLayout>
                 <Label
                     Padding="0,10"
                     FontSize="20"
-                    Text="Rounds Played: " />
+                    Text="Rounds Played: "
+                    TextColor="{DynamicResource Primary}" />
                 <Label
                     x:Name="RoundsPlayedVal"
                     Padding="0,10"
-                    FontSize="20" />
+                    FontSize="20"
+                    TextColor="{DynamicResource Primary}" />
             </HorizontalStackLayout>
         </VerticalStackLayout>
 
