@@ -14,9 +14,14 @@ namespace MauiGolf.Models
         public int Value { get; set; }
         public DateTime Date { get; set; }
         public string Course { get; set; }
-        public float Rating { get; set; }
+        public string Tees { get; set; }
+        public float Rating { get; set; } 
         public int Slope { get; set; }
         public int HandicapId { get; set; }
         public int PlayerId { get; set; }
     }
+
+    
+
+
 }
