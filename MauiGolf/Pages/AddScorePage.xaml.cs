@@ -3,7 +3,7 @@ using MauiGolf.Data;
 using System.Diagnostics;
 using CommunityToolkit.Mvvm.ComponentModel;
 using MauiGolf.ViewModels;
-
+using MauiGolf.Services;
 
 namespace MauiGolf.Pages
 {
@@ -43,6 +43,31 @@ namespace MauiGolf.Pages
             
             //navigate to scores page
             Application.Current.MainPage = new AuthAppShell(_currentUser);
+            
+        }
+
+        //Method to find nearby courses using APIService and current location
+        private async Task<List<string>> GetNearbyCourses()
+        {
+            string radius = "29";
+            var location = await Geolocation.GetLocationAsync();
+            string latitude = location.Latitude.ToString();
+            string longitude = location.Longitude.ToString();
+            var courses = await APIService.FindCoursesNearMe(radius, latitude, longitude);
+            Debug.WriteLine("Find Courses: " + courses);
+            return courses;
+        }
+
+        //Method to search selected course and populate tee entries
+        private async Task<CourseDetail> OnCourseSelectionGetDetails(string courseName)
+        {
+            var courseDetails = await APIService.GetCourseDetailsByName(courseName);
+            return courseDetails;
+        }
+
+        //Method to populate tee entries
+        private void PopulateTeeEntries(CourseDetail courseDetails)
+        {
             
         }
     }
