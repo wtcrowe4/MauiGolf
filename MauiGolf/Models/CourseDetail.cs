@@ -36,7 +36,7 @@ namespace MauiGolf.Models
         public string State { get; set; }
 
         [JsonPropertyName("zip")]
-        public string zip { get; set; }
+        public string Zip { get; set; }
 
         [JsonPropertyName("country")]
         public string Country { get; set; }

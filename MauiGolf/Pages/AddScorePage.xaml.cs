@@ -9,7 +9,7 @@ namespace MauiGolf.Pages
 {
     public partial class AddScorePage : ContentPage
     {
-        private User _currentUser;
+        private readonly User _currentUser;
         public AddScorePage(MainViewModel vm)
         {
             InitializeComponent();
@@ -20,11 +20,12 @@ namespace MauiGolf.Pages
 
         private async void OnAddScore_Clicked(object sender, EventArgs e)
         {
-            var score = new Score();
-            score.Value = Convert.ToInt32(ScoreEntry.Text);
+            var score = new Score
+            {
+                Value = Convert.ToInt32(ScoreEntry.Text)
+            };
             //checking if the date is valid
-            DateTime selectedDate;
-            if (DateTime.TryParse(DateEntry.Date.ToString(), out selectedDate))
+            if (DateTime.TryParse(DateEntry.Date.ToString(), out DateTime selectedDate))
             {
                 score.Date = selectedDate;
             }
@@ -47,7 +48,7 @@ namespace MauiGolf.Pages
         }
 
         //Method to find nearby courses using APIService and current location
-        private async Task<List<string>> GetNearbyCourses()
+        private static async Task<List<string>> GetNearbyCourses()
         {
             string radius = "29";
             var location = await Geolocation.GetLocationAsync();
@@ -59,14 +60,14 @@ namespace MauiGolf.Pages
         }
 
         //Method to search selected course and populate tee entries
-        private async Task<CourseDetail> OnCourseSelectionGetDetails(string courseName)
+        private static async Task<CourseDetail> OnCourseSelectionGetDetails(string courseName)
         {
             var courseDetails = await APIService.GetCourseDetailsByName(courseName);
             return courseDetails;
         }
 
         //Method to populate tee entries
-        private void PopulateTeeEntries(CourseDetail courseDetails)
+        private static void PopulateTeeEntries(CourseDetail courseDetails)
         {
             
         }

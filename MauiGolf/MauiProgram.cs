@@ -2,6 +2,7 @@
 using MauiGolf.Pages;
 using MauiGolf.Models;
 using MauiGolf.ViewModels;
+using CommunityToolkit.Maui;
 
 namespace MauiGolf
 {
@@ -12,6 +13,7 @@ namespace MauiGolf
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

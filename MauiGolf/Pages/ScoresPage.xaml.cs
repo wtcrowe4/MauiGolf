@@ -10,7 +10,7 @@ namespace MauiGolf.Pages
     public partial class ScoresPage : ContentPage
     {
         
-        private User _currentUser;
+        private readonly User _currentUser;
 
        
         public ScoresPage(MainViewModel vm)

@@ -6,7 +6,7 @@ namespace MauiGolf.Pages
 {
     public partial class HandicapPage : ContentPage
     {
-        private User _currentUser;
+        private readonly User _currentUser;
         public HandicapPage(MainViewModel vm)
         {
             InitializeComponent();

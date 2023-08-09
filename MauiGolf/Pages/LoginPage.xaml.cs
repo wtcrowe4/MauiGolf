@@ -14,7 +14,7 @@ namespace MauiGolf.Pages
             CheckForPrevLogin();
         }
 
-        private async void CheckForPrevLogin()
+        private static async void CheckForPrevLogin()
         {
             var userId = Preferences.Get("UserId", 0);
             var userEmail = Preferences.Get("UserEmail", "");
@@ -23,7 +23,7 @@ namespace MauiGolf.Pages
             if (userId != 0)
             {
                 var user = await DBService.Login(userEmail, userPassword);
-                var mainViewModel = new MainViewModel(user);
+                //var mainViewModel = new MainViewModel(user);
                 Application.Current.MainPage = new AuthAppShell(user);
             }
            
@@ -44,7 +44,7 @@ namespace MauiGolf.Pages
                 Preferences.Set("UserEmail", user.Email);
                 Preferences.Set("UserPassword", user.Password);
                     
-                var mainViewModel = new MainViewModel(user);
+                //var mainViewModel = new MainViewModel(user);
                 Application.Current.MainPage = new AuthAppShell(user);
             }
         }
